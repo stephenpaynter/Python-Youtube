@@ -44,7 +44,7 @@ else:
     message = client.messages.create(
         to="removed", #removed for privacy
         from_="removed",#removed for privacy
-        body=_text + " down!")
+        body=_text + " has changed state!")
     print(message.sid)
 
 
