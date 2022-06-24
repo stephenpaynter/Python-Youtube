@@ -46,7 +46,3 @@ else:
         from_="removed",#removed for privacy
         body=_text + " has changed state!")
     print(message.sid)
-
-
-################## need to check and validate everything above to make code neat!!!!!! and test with multiple ints down
-
