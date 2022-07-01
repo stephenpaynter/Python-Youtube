@@ -4,11 +4,8 @@ import time
 import os
 from twilio.rest import Client
 # For Genie/Pyats
-from genie.conf import Genie
-from genie.utils import Dq
 from genie.testbed import load
-import requests
-import json
+
 
 # Your Account SID from twilio.com/console
 account_sid = "Removed" #removed for privacy
@@ -17,7 +14,12 @@ auth_token  = "Removed" #removed for privacy
 
 client = Client(account_sid, auth_token)
 
-_baseline = ['GigabitEthernet0/0', 'GigabitEthernet0/2', 'Loopback0', 'Loopback100']
+_baseline = [
+    'GigabitEthernet0/0', 
+    'GigabitEthernet0/2', 
+    'Loopback0', 
+    'Loopback100'
+]
 
 @repeat(every(1).minutes)
 def _pyats_show_interface():
@@ -45,4 +47,5 @@ else:
         to="removed", #removed for privacy
         from_="removed",#removed for privacy
         body=_text + " has changed state!")
-    print(message.sid)
+
+    
